@@ -13,9 +13,7 @@ npm install @spektrum-ai/sdk
 ```typescript
 import { SpektrumSDK } from "@spektrum-ai/sdk"
 
-const spektrum = new SpektrumSDK({
-  apiKey: "your-api-key",
-})
+const spektrum = new SpektrumSDK()
 
 // Create a project, add a task, and deploy
 const project = await spektrum.createProject("my-user-id")
@@ -39,16 +37,12 @@ The SDK can be configured using environment variables:
 
 ```bash
 export SPEKTRUM_API_KEY="your-api-key"
-export SPEKTRUM_ENDPOINT="https://platform.jigjoy.ai"  # optional, this is the default
 ```
 
 ### Constructor Options
 
 ```typescript
-const spektrum = new SpektrumSDK({
-  apiKey: "your-api-key",        // Required (or set SPEKTRUM_API_KEY env var)
-  endpoint: "https://custom.endpoint.com",  // Optional
-})
+const spektrum = new SpektrumSDK()
 ```
 
 ## API Reference
@@ -157,8 +151,6 @@ async function buildAndDeployApp() {
 
   // 6. Redeploy with changes
   await spektrum.codeAndDeploy(updated)
-  const newUrl = await spektrum.getAppUrl(project.id)
-  console.log(`Updated app: ${newUrl}`)
 }
 
 buildAndDeployApp().catch(console.error)
@@ -172,7 +164,7 @@ The SDK throws `SpektrumError` for API errors:
 import { SpektrumSDK, SpektrumError } from "@spektrum-ai/sdk"
 
 try {
-  const spektrum = new SpektrumSDK({ apiKey: "invalid-key" })
+  const spektrum = new SpektrumSDK()
   await spektrum.createProject("user")
 } catch (error) {
   if (error instanceof SpektrumError) {
