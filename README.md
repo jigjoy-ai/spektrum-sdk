@@ -75,7 +75,7 @@ Every task you run via the SDK can be monitored in real-time on the [JigJoy Plat
 - **App history** — View all your deployed apps and their versions
 
 
-<img width="2555" height="1344" alt="Screenshot from 2026-03-07 16-57-47" src="https://github.com/user-attachments/assets/2151d118-0bca-4b36-b590-c273a664c165" />
+<img width="2842" height="1747" alt="Screenshot from 2026-03-07 22-12-03" src="https://github.com/user-attachments/assets/8ba0ed0e-e4b3-49df-b64f-595478a31c47" />
 
 ## API Reference
 
