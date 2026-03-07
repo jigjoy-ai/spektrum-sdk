@@ -135,20 +135,6 @@ await spektrum.codeAndDeploy(updatedTask)
 | `getAppUrl(projectId)`                      | Returns the live app URL   |
 | `leaveComment(taskId, comment, authorId)`   | Requests changes to a task |
 
-## Error Handling
-
-```typescript
-import { SpektrumSDK, SpektrumError } from "@spektrum-ai/sdk"
-
-try {
-	await spektrum.codeAndDeploy(task)
-} catch (error) {
-	if (error instanceof SpektrumError) {
-		console.error(`API Error [${error.status}]: ${error.message}`)
-	}
-}
-```
-
 ## Complete Example
 
 For a full working example with step-by-step instructions, check out:
@@ -156,12 +142,6 @@ For a full working example with step-by-step instructions, check out:
 **[spektrum-sdk-example](https://github.com/jigjoy-ai/spektrum-sdk-example)**
 
 Clone it, run `npm install`, add your API key, and you'll have a deployed finance dashboard in seconds.
-
-## Links
-
-- [JigJoy Platform](https://jigjoy.ai/spektrum) — Get your API key and monitor your apps
-- [Working Example](https://github.com/jigjoy-ai/spektrum-sdk-example) — Clone and run in seconds
-- [npm Package](https://www.npmjs.com/package/@spektrum-ai/sdk) — Latest version
 
 ## License
 
