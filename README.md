@@ -51,9 +51,9 @@ const { project } = await spektrum.createProject("my-awesome-app")
 
 // Describe what you want to build
 const { task } = await spektrum.createTask(
-  project.id,
-  "E-commerce landing page",
-  "Build a modern landing page with hero section, product grid, testimonials, and newsletter signup"
+	project.id,
+	"E-commerce landing page",
+	"Build a modern landing page with hero section, product grid, testimonials, and newsletter signup",
 )
 
 // Generate code and deploy
@@ -64,7 +64,7 @@ const appUrl = await spektrum.getAppUrl(project.id)
 console.log(`🎉 Live at: ${appUrl}`)
 ```
 
-## 🖥️ Live Monitoring on JigJoy Platform
+## Live Monitoring on JigJoy Platform
 
 Every task you run via the SDK can be monitored in real-time on the [JigJoy Platform](https://platform.jigjoy.ai). Watch as your application gets built step-by-step:
 
@@ -73,7 +73,6 @@ Every task you run via the SDK can be monitored in real-time on the [JigJoy Plat
 - **Deployment progress** — Track deployment status
 - **Logs & debugging** — Access detailed logs when needed
 - **App history** — View all your deployed apps and their versions
-
 
 <img width="2842" height="1747" alt="Screenshot from 2026-03-07 22-12-03" src="https://github.com/user-attachments/assets/8ba0ed0e-e4b3-49df-b64f-595478a31c47" />
 
@@ -94,9 +93,9 @@ Creates a task describing what to build. Be as detailed as you want — the more
 
 ```typescript
 const { task } = await spektrum.createTask(
-  project.id,
-  "Dashboard",
-  "Create an analytics dashboard with charts, filters, and data export"
+	project.id,
+	"Dashboard",
+	"Create an analytics dashboard with charts, filters, and data export",
 )
 ```
 
@@ -122,23 +121,19 @@ const url = await spektrum.getAppUrl(project.id)
 Add feedback or request changes to an existing task. Then call `codeAndDeploy` again to apply them.
 
 ```typescript
-const { task: updatedTask } = await spektrum.leaveComment(
-  task.id,
-  "Add dark mode support",
-  "user-123"
-)
+const { task: updatedTask } = await spektrum.leaveComment(task.id, "Add dark mode support", "user-123")
 await spektrum.codeAndDeploy(updatedTask)
 ```
 
 ## SDK Methods Summary
 
-| Method | Description |
-|--------|-------------|
-| `createProject(name)` | Creates a new project |
-| `createTask(projectId, title, description)` | Defines what to build |
-| `codeAndDeploy(task)` | Generates code and deploys |
-| `getAppUrl(projectId)` | Returns the live app URL |
-| `leaveComment(taskId, comment, authorId)` | Requests changes to a task |
+| Method                                      | Description                |
+| ------------------------------------------- | -------------------------- |
+| `createProject(name)`                       | Creates a new project      |
+| `createTask(projectId, title, description)` | Defines what to build      |
+| `codeAndDeploy(task)`                       | Generates code and deploys |
+| `getAppUrl(projectId)`                      | Returns the live app URL   |
+| `leaveComment(taskId, comment, authorId)`   | Requests changes to a task |
 
 ## Error Handling
 
@@ -146,11 +141,11 @@ await spektrum.codeAndDeploy(updatedTask)
 import { SpektrumSDK, SpektrumError } from "@spektrum-ai/sdk"
 
 try {
-  await spektrum.codeAndDeploy(task)
+	await spektrum.codeAndDeploy(task)
 } catch (error) {
-  if (error instanceof SpektrumError) {
-    console.error(`API Error [${error.status}]: ${error.message}`)
-  }
+	if (error instanceof SpektrumError) {
+		console.error(`API Error [${error.status}]: ${error.message}`)
+	}
 }
 ```
 
@@ -164,7 +159,7 @@ Clone it, run `npm install`, add your API key, and you'll have a deployed financ
 
 ## Links
 
-- [JigJoy Platform](https://platform.jigjoy.ai) — Get your API key and monitor your apps
+- [JigJoy Platform](https://jigjoy.ai/spektrum) — Get your API key and monitor your apps
 - [Working Example](https://github.com/jigjoy-ai/spektrum-sdk-example) — Clone and run in seconds
 - [npm Package](https://www.npmjs.com/package/@spektrum-ai/sdk) — Latest version
 
